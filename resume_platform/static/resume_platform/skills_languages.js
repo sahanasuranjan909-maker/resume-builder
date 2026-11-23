@@ -3,8 +3,8 @@
     if (document.getElementById('skills-languages-enhancement')) return;
 
     const editor = document.querySelector('.editor') || document.querySelector('form') || document.querySelector('main');
-    const resume = document.querySelector('.resume');
-    if (!editor || !resume) return;
+    const resume = document.querySelector('.resume, #resume, [data-resume], .resume-preview, .resume-paper');
+    if (!editor) return;
 
     const storageKey = 'resumeforge-skills-languages';
     const suggestions = ['Python', 'Django', 'JavaScript', 'HTML', 'CSS', 'React', 'SQL', 'Git', 'GitHub', 'Figma', 'Excel', 'Communication', 'Problem solving', 'Teamwork'];
@@ -38,7 +38,7 @@
     preview.className = 'resume-section imported-skills-languages';
     preview.id = 'resume-skills-languages';
     preview.innerHTML = '<h2 class="resume-section-title">Skills</h2><ul class="resume-imported-bullets" id="resume-skill-bullets"></ul><div id="resume-language-block"></div>';
-    resume.append(preview);
+    if (resume) resume.append(preview);
 
     const persist = () => {
       localStorage.setItem(storageKey, JSON.stringify(state));
