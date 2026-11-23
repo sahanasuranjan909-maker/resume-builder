@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "node scripts/build-static.mjs && cp resume_platform/static/resume_platform/skills_languages.* dist/static/resume_platform/",
+  "buildCommand": "node scripts/build-static.mjs && mkdir -p dist/static/resume_platform/images && cp resume_platform/static/resume_platform/images/developer-photo.jpg dist/static/resume_platform/images/",
   "outputDirectory": "dist"
 }
